@@ -150,8 +150,8 @@ export default function Home() {
           }>
             <ArticlesList />
           </Suspense>
-          <div className="mt-12">
-            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold text-end">
+          <div className="mt-12 text-end">
+            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold">
               Lihat semua artikel →
             </Link>
           </div>
