@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import articlesData from '@/data/berita.json';
 
 interface Article {
   id: number;
@@ -10,27 +11,10 @@ interface Article {
   author: string;
 }
 
-// Server Component - melakukan data fetching
+// Server Component - langsung import data dari JSON
 export default async function ArticlesList() {
   try {
-    // Construct absolute URL for server-side fetch
-    // On Vercel, VERCEL_URL is automatically set to the deployment URL
-    let baseUrl = 'http://localhost:3000';
-    
-    if (process.env.VERCEL_URL) {
-      baseUrl = `https://${process.env.VERCEL_URL}`;
-    } else if (process.env.NEXT_PUBLIC_BASE_URL) {
-      baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-    }
-    
-    const response = await fetch(`${baseUrl}/api/berita`, {
-      next: { revalidate: 60 } // ISR: revalidate setiap 60 detik
-    });
-    
-    if (!response.ok) throw new Error('Failed to fetch');
-    
-    const data = await response.json();
-    const articles: Article[] = data.data || [];
+    const articles: Article[] = articlesData || [];
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
