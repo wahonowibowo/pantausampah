@@ -96,7 +96,7 @@ export default function RootLayout({
 
             {/* Copyright */}
             <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-              <p>&copy; 2024 PantauSampah. All rights reserved. | Pantau, Kelola, Jaga Bumi</p>
+              <p>&copy; 2026 PantauSampah. All rights reserved. | Pantau, Kelola, Jaga Bumi</p>
             </div>
           </div>
         </footer>
