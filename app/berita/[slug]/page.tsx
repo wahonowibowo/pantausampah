@@ -37,11 +37,7 @@ export default async function BeritaDetailPage({ params }: BeritaDetailPageProps
   
   // Fetch data dari API route
   try {
-    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    const host = process.env.VERCEL_URL || 'localhost:3000';
-    const apiUrl = `${protocol}://${host}/api/berita?slug=${slug}`;
-    
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`/api/berita?slug=${slug}`, {
       next: { revalidate: 60 },
     });
 

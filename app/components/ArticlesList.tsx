@@ -13,12 +13,8 @@ interface Article {
 // Server Component - melakukan data fetching
 export default async function ArticlesList() {
   try {
-    // Fetch data dari API route yang sudah dibuat
-    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    const host = process.env.VERCEL_URL || 'localhost:3000';
-    const apiUrl = `${protocol}://${host}/api/berita`;
-    
-    const response = await fetch(apiUrl, {
+    // Fetch data dari API route menggunakan relative URL
+    const response = await fetch('/api/berita', {
       next: { revalidate: 60 } // ISR: revalidate setiap 60 detik
     });
     
