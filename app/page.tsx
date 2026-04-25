@@ -13,7 +13,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               <span className="text-green-600">Pantau</span>
-              <span className="text-gray-800"> Sampah</span>
+              <span className="text-gray-800">Sampah</span>
             </h1>
             <h2 className="text-3xl md:text-4xl text-gray-700 mb-6">di daerahmu!</h2>
 
