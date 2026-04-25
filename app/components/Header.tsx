@@ -13,7 +13,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
               <Image 
                 src="/images/logo/logo.png" 
                 alt="Logo" 
