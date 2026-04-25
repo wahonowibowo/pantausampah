@@ -1,65 +1,160 @@
-import Image from "next/image";
+import Link from "next/link";
+import ServiceCard from "./components/ServiceCard";
+import ArticlesList from "./components/ArticlesList";
+import { Suspense } from "react";
+import { MdOutlineCalendarMonth, MdOutlineFlag, MdPayment, MdNotifications, MdGroup, MdListAlt, MdRecycling, MdPublic } from "react-icons/md";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="w-full">
+      {/* ================= BANNER SECTION ================= */}
+      <section className="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+              <span className="text-green-600">Pantau</span>
+              <span className="text-gray-800"> Sampah</span>
+            </h1>
+            <h2 className="text-3xl md:text-4xl text-gray-700 mb-6">di daerahmu!</h2>
+
+            {/* Slogan */}
+            <div className="flex justify-center items-center gap-3 mb-8 flex-wrap">
+              <span className="text-lg font-semibold text-gray-800">Pantau</span>
+              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+              <span className="text-lg font-semibold text-gray-800">Kelola</span>
+              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+              <span className="text-lg font-semibold text-gray-800">Jaga Bumi</span>
+            </div>
+
+            {/* Statistics Card */}
+            <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8 max-w-3xl mx-auto">
+              <p className="text-gray-700 mb-6 text-lg">
+                Mari ikut jaga bumi dengan pantau & kelola sampah di daerahmu di <b>
+                  <span className="text-green-600">Pantau</span>
+                  <span className="text-gray-800">Sampah</span>
+                </b>
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="text-3xl mb-2 text-green-600"><MdGroup /></div>
+                  <p className="text-2xl font-bold text-green-600">7,896</p>
+                  <p className="text-sm text-gray-600">Bergabung</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="text-3xl mb-2 text-green-600"><MdListAlt /></div>
+                  <p className="text-2xl font-bold text-green-600">3,876</p>
+                  <p className="text-sm text-gray-600">Berlangganan DLH</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="text-3xl mb-2 text-green-600"><MdRecycling /></div>
+                  <p className="text-2xl font-bold text-green-600">12.5K</p>
+                  <p className="text-sm text-gray-600">Sampah Terpantau</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="text-3xl mb-2 text-green-600"><MdPublic /></div>
+                  <p className="text-2xl font-bold text-green-600">45</p>
+                  <p className="text-sm text-gray-600">Daerah Aktif</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* ================= SERVICES SECTION ================= */}
+      <section id="layanan" className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">Layanan Kami</h2>
+            <p className="text-gray-600 text-lg">Gunakan layanan kami dengan mudah dan cepat</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <ServiceCard
+              icon={<MdOutlineCalendarMonth className="text-green-600" />}
+              title="Cek Jadwal"
+              description="Lihat jadwal pengangkutan sampah di daerahmu dengan cepat dan mudah. Dapatkan notifikasi real-time untuk tidak ketinggalan jadwal pengangkutan."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <ServiceCard
+              icon={<MdOutlineFlag className="text-green-600" />}
+              title="Lapor Masalah"
+              description="Laporkan kendala sampah langsung ke pihak terkait. Tim kami akan segera menangani laporan Anda dengan cepat dan profesional."
+            />
+            <ServiceCard
+              icon={<MdPayment className="text-green-600" />}
+              title="Bayar Iuran"
+              description="Pembayaran iuran sampah menjadi lebih praktis melalui platform kami. Tersedia berbagai metode pembayaran untuk kemudahan Anda."
+            />
+            <ServiceCard
+              icon={<MdNotifications className="text-green-600" />}
+              title="Notifikasi"
+              description="Terima notifikasi penting tentang jadwal, tips pengelolaan sampah, dan informasi lingkungan langsung ke perangkat Anda."
+            />
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* ================= CTA SECTION ================= */}
+      <section id="daftar" className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white rounded-xl overflow-hidden shadow-lg">
+            {/* Image */}
+            <div className="hidden md:flex h-80 bg-gradient-to-br from-green-100 to-blue-100 items-center justify-center">
+              <div className="text-6xl">♻️</div>
+            </div>
+
+            {/* Content */}
+            <div className="p-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Kelola Sampah Lebih Mudah & Praktis
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Daftar sekarang untuk menikmati layanan pengangkutan resmi DLH, pembayaran iuran yang praktis, serta notifikasi jadwal secara real-time.
+              </p>
+
+              {/* Features */}
+              <div className="space-y-3 mb-8">
+                <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mr-2">🚛 DLH Resmi</span>
+                <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mr-2">💳 Bayar Iuran</span>
+                <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">🔔 Notifikasi</span>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-4">
+                <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                  Daftar Sekarang
+                </button>
+                <button className="border-2 border-green-500 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                  Masuk
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= ARTICLES SECTION ================= */}
+      <section id="berita" className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">Artikel Terkait</h2>
+            <p className="text-gray-600 text-lg mb-6">Temukan informasi dan edukasi seputar pengelolaan sampah</p>
+            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold">
+              Lihat semua artikel →
+            </Link>
+          </div>
+
+          {/* Articles Grid with Suspense for async Server Component */}
+          <Suspense fallback={
+            <div className="text-center py-12">
+              <p className="text-gray-500">Memuat artikel...</p>
+            </div>
+          }>
+            <ArticlesList />
+          </Suspense>
+        </div>
+      </section>
     </div>
   );
 }
