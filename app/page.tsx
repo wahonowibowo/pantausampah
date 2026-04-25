@@ -140,9 +140,6 @@ export default function Home() {
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-3">Artikel Terkait</h2>
             <p className="text-gray-600 text-lg mb-6">Temukan informasi dan edukasi seputar pengelolaan sampah</p>
-            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold">
-              Lihat semua artikel →
-            </Link>
           </div>
 
           {/* Articles Grid with Suspense for async Server Component */}
@@ -153,6 +150,11 @@ export default function Home() {
           }>
             <ArticlesList />
           </Suspense>
+          <div className="mt-12">
+            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold text-end">
+              Lihat semua artikel →
+            </Link>
+          </div>
         </div>
       </section>
     </div>
