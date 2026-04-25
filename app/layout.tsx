@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Niramit } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 
