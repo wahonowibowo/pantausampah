@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,57 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white">
         {/* Header */}
-        <header className="bg-white shadow-sm sticky top-0 z-50">
-          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex justify-between items-center">
-              {/* Logo */}
-              <Link href="/" className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
-                  <Image 
-                    src="/images/logo/logo.png" 
-                    alt="Logo" 
-                    width={40} 
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="font-bold text-xl">
-                  <span className="text-green-600">Pantau</span>
-                  <span className="text-gray-800">Sampah</span>
-                </span>
-              </Link>
-
-              {/* Navigation Menu */}
-              <ul className="hidden md:flex gap-8">
-                <li>
-                  <Link href="/" className="text-gray-700 hover:text-green-600 transition-colors">
-                    Beranda
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#layanan" className="text-gray-700 hover:text-green-600 transition-colors">
-                    Layanan
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/berita" className="text-gray-700 hover:text-green-600 transition-colors">
-                    Berita
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#kontak" className="text-gray-700 hover:text-green-600 transition-colors">
-                    Kontak
-                  </Link>
-                </li>
-              </ul>
-
-              {/* CTA Button */}
-              <button className="hidden md:block bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors font-semibold">
-                Daftar
-              </button>
-            </div>
-          </nav>
-        </header>
+        <Header />
 
         {/* Main Content */}
         <main className="flex-1">
@@ -96,8 +47,14 @@ export default function RootLayout({
               {/* Logo Section */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center font-bold">
-                    P
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                    <Image 
+                      src="/images/logo/logo.png" 
+                      alt="Logo" 
+                      width={40} 
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <span className="font-bold text-lg">PantauSampah</span>
                 </div>
