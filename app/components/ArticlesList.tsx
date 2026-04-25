@@ -13,8 +13,17 @@ interface Article {
 // Server Component - melakukan data fetching
 export default async function ArticlesList() {
   try {
-    // Fetch data dari API route menggunakan relative URL
-    const response = await fetch('/api/berita', {
+    // Construct absolute URL for server-side fetch
+    // On Vercel, VERCEL_URL is automatically set to the deployment URL
+    let baseUrl = 'http://localhost:3000';
+    
+    if (process.env.VERCEL_URL) {
+      baseUrl = `https://${process.env.VERCEL_URL}`;
+    } else if (process.env.NEXT_PUBLIC_BASE_URL) {
+      baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    }
+    
+    const response = await fetch(`${baseUrl}/api/berita`, {
       next: { revalidate: 60 } // ISR: revalidate setiap 60 detik
     });
     

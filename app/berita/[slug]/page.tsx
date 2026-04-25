@@ -37,7 +37,16 @@ export default async function BeritaDetailPage({ params }: BeritaDetailPageProps
   
   // Fetch data dari API route
   try {
-    const response = await fetch(`/api/berita?slug=${slug}`, {
+    // Construct absolute URL for server-side fetch
+    let baseUrl = 'http://localhost:3000';
+    
+    if (process.env.VERCEL_URL) {
+      baseUrl = `https://${process.env.VERCEL_URL}`;
+    } else if (process.env.NEXT_PUBLIC_BASE_URL) {
+      baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    }
+    
+    const response = await fetch(`${baseUrl}/api/berita?slug=${slug}`, {
       next: { revalidate: 60 },
     });
 
