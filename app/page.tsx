@@ -150,7 +150,7 @@ export default function Home() {
           }>
             <ArticlesList />
           </Suspense>
-          <div className="mt-12 text-end">
+          <div className="mt-12">
             <Link href="/berita" className="flex items-center justify-end gap-2 text-green-600 hover:text-gray-800">
               <span>Lihat semua artikel</span>
               <div className="text-2xl"> <MdArrowForward /> </div>
