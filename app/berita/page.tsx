@@ -18,11 +18,11 @@ export default function BeritaPage() {
             <span className="text-2xl"> <MdArrowBack /> </span>
             <span>Kembali ke Beranda</span>
           </Link>
-          <h1 className="text-4xl md:text-5xl text-green-700 font-bold mb-4">
-            <span className="bg-white opacity-75 py-1 px-2"> Artikel & Berita</span>
+          <h1 className="text-4xl md:text-5xl text-green-700 font-bold mb-4" style="margin-bottom: 30px;">
+            <span className="bg-white opacity-75 pb-4 px-2"> Artikel & Berita</span>
           </h1>
           <p className="text-gray-800">
-            <span className="bg-white opacity-75 py-1 px-2">Temukan informasi, tips, dan berita terkini tentang pengelolaan sampah</span>
+            <span className="bg-white opacity-75 px-2" style="padding-bottom: 5px;">Temukan informasi, tips, dan berita terkini tentang pengelolaan sampah</span>
           </p>
         </div>
       </section>
