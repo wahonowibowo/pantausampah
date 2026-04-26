@@ -151,7 +151,7 @@ export default function Home() {
             <ArticlesList />
           </Suspense>
           <div className="mt-12 text-end">
-            <Link href="/berita" className="flex items-center gap-2 text-green-600 hover:text-gray-800">
+            <Link href="/berita" className="flex items-center gap-2 text-green-600 hover:text-gray-800 text-end">
               <span>Lihat semua artikel</span>
               <div className="text-2xl"> <MdArrowForward /> </div>
             </Link>
