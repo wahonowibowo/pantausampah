@@ -2,7 +2,7 @@ import Link from "next/link";
 import ServiceCard from "./components/ServiceCard";
 import ArticlesList from "./components/ArticlesList";
 import { Suspense } from "react";
-import { MdOutlineCalendarMonth, MdOutlineFlag, MdPayment, MdNotifications, MdGroup, MdListAlt, MdRecycling, MdPublic } from "react-icons/md";
+import { MdOutlineCalendarMonth, MdOutlineFlag, MdPayment, MdNotifications, MdGroup, MdListAlt, MdRecycling, MdPublic, MdArrowForward } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -151,8 +151,9 @@ export default function Home() {
             <ArticlesList />
           </Suspense>
           <div className="mt-12 text-end">
-            <Link href="/berita" className="inline-block text-green-600 hover:text-green-700 font-semibold">
-              Lihat semua artikel →
+            <Link href="/berita" className="flex items-center gap-2 text-green-600 hover:text-gray-800">
+              <span>Lihat semua artikel</span>
+              <div className="text-2xl"> <MdArrowForward /> </div>
             </Link>
           </div>
         </div>
