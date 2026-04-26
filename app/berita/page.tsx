@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { MdArrowBack } from "react-icons/md";
 import ArticlesList from "@/app/components/ArticlesList";
+import { MdArrowBack } from "react-icons/md";
 
 export const metadata = {
   title: "Artikel Berita - PantauSampah",
@@ -12,7 +12,7 @@ export default function BeritaPage() {
   return (
     <div className="w-full">
       {/* Banner */}
-      <section className="bg-[url('/images/logo/banner.png')] bg-cover bg-center py-20 sm:py-24 md:py-32 px-4">
+      <section className="bg-[url('/images/logo/banner2.png')] bg-cover bg-center py-20 sm:py-24 md:py-32 px-4">
         <div className="max-w-7xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-2 text-green-600 hover:text-gray-700 mb-4">
             <span className="text-2xl"> <MdArrowBack /> </span>
