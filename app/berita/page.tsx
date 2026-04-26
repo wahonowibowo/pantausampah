@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { MdArrowBack } from "react-icons/md";
 import ArticlesList from "@/app/components/ArticlesList";
 
 export const metadata = {
@@ -10,15 +11,18 @@ export const metadata = {
 export default function BeritaPage() {
   return (
     <div className="w-full">
-      {/* Header */}
-      <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-16 px-4">
+      {/* Banner */}
+      <section className="bg-[url('/images/logo/banner2.png')] bg-cover bg-center py-20 sm:py-24 md:py-32 px-4">
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="text-green-100 hover:text-white mb-4 inline-block">
-            ← Kembali ke Beranda
+          <Link href="/" className="inline-flex items-center gap-2 text-green-600 hover:text-gray-700 mb-4">
+            <span className="text-2xl"> <MdArrowBack /> </span>
+            <span>Kembali ke Beranda</span>
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Artikel & Berita</h1>
-          <p className="text-xl text-green-100">
-            Temukan informasi, tips, dan berita terkini tentang pengelolaan sampah dan lingkungan
+          <h1 className="text-4xl md:text-5xl text-green-700 font-bold mb-4">
+            <span className="bg-white opacity-75 py-1 px-2"> Artikel & Berita</span>
+          </h1>
+          <p className="text-gray-800">
+            <span className="bg-white opacity-75 py-1 px-2">Temukan informasi, tips, dan berita terkini tentang pengelolaan sampah</span>
           </p>
         </div>
       </section>
